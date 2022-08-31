@@ -1,20 +1,20 @@
-package src.ufcqx.scanner;
+package src.ufcqx.serverthread;
 
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class ClientScanner {
+public class ClientThreadScanner {
 	
 	//Creating socket and out-stream
 	private Socket client;
 	private PrintStream out;
 	
-	public ClientScanner() {
+	public ClientThreadScanner() {
 		try {
 			//Starting the socket
-			this.client = new Socket("127.0.0.1", ServerScanner.port);
+			this.client = new Socket("172.18.102.141", ServerThreadScanner.port);
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -38,8 +38,8 @@ public class ClientScanner {
 	}
 	
 	public static void main(String[] args) {
-		ClientScanner client = new ClientScanner();
-		client.sendMessage("A");
+		ClientThreadScanner client = new ClientThreadScanner();
+		client.sendMessage("Eae boy");
 	}
 
 }

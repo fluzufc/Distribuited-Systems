@@ -4,7 +4,7 @@ public class WorkerThread extends Thread{
     
     private int id;
     private int in;
-    private int out;
+    private double out;
 
     public WorkerThread(int id) {
         this.id = id;
@@ -15,7 +15,7 @@ public class WorkerThread extends Thread{
         this.work();
     }
     
-    public void work() {
+    private void work() {
         System.out.println("Worker " + this.id + " it's working");
         try {
             Thread.sleep(2000);
@@ -24,7 +24,7 @@ public class WorkerThread extends Thread{
         }
         System.out.println("Worker " + this.id + " it's done working");
 
-        this.out = this.in*10;
+        this.out = this.in*3.14;
     }
 
     public int getIn() {
@@ -35,11 +35,11 @@ public class WorkerThread extends Thread{
 		this.in = in;
 	}
 
-	public int getOut() {
+	public double getOut() {
 		return out;
 	}
 
-	public void setOut(int out) {
+	public void setOut(double out) {
 		this.out = out;
 	}
 

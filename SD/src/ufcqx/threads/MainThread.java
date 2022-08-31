@@ -6,10 +6,13 @@ public class MainThread {
         WorkerThread wt1 = new WorkerThread(1);
         WorkerThread wt2 = new WorkerThread(2);
         WorkerThread wt3 = new WorkerThread(3);
+
+        //In: Working input
         wt1.setIn(10);
 		wt2.setIn(20);
 		wt3.setIn(30);
 
+        //Storage initial processing time
         long start = System.currentTimeMillis();
         wt1.start();
         wt2.start();
@@ -21,6 +24,7 @@ public class MainThread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        //Storage final processing time
         long end = System.currentTimeMillis();
 
 

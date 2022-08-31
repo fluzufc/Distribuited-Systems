@@ -7,27 +7,28 @@ import java.util.Scanner;
 
 public class ServerScanner {
 	
-	public final static int port = 80;
+	//Setting default port
+	public final static int port = 3345;
 	
 	public static void main(String[] args) {
 		
 		try {
-			//iniciando o servidor
+			//Starting the server
 			ServerSocket server = new ServerSocket(ServerScanner.port);
-			System.out.println("Servidor iniciado na porta " + ServerScanner.port);
+			System.out.println("Server started on port: " + ServerScanner.port);
 			
-			//aceitando um cliente
+			//Accepting a client
 			Socket client = server.accept();
-			System.out.println("Cliente conectado do IP: " 
+			System.out.println("Client connected with IP: " 
 			+ client.getInetAddress().getHostAddress());
 			
-			//ler os dados vindos do cliente
+			//Reading data from the client
 			Scanner in = new Scanner(client.getInputStream());
-			//System.out.println(in.hasNextLine());
 			while(in.hasNextLine()) {
 				System.out.println(in.nextLine());
 			}
 			
+			//Closing in-stream and the server
 			in.close();
 			server.close();
 			

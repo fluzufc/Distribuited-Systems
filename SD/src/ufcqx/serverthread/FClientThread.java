@@ -1,18 +1,18 @@
-package src.ufcqx.scanner;
+package src.ufcqx.serverthread;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class FClient extends javax.swing.JFrame {
+public class FClientThread extends javax.swing.JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	private ClientScanner client = new ClientScanner(); //objeto client scanner
+	private ClientThreadScanner client = new ClientThreadScanner(); //objeto client scanner
 	
 	/**
      * Creates new form FClient
      */
-    public FClient() {
+    public FClientThread() {
         initComponents();
         
         this.addWindowListener(new WindowAdapter() {
@@ -110,7 +110,7 @@ public class FClient extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FClient().setVisible(true);
+                new FClientThread().setVisible(true);
             }
         });
     }

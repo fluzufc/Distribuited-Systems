@@ -7,7 +7,7 @@ public class FClientThread extends javax.swing.JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	private ClientThreadScanner client = new ClientThreadScanner(); //objeto client scanner
+	private ClientThreadScanner client = new ClientThreadScanner();
 	
 	/**
      * Creates new form FClient
